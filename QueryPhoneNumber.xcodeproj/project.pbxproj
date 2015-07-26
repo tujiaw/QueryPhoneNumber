@@ -10,6 +10,7 @@
 		9D3802EA1B5FD4C800DBFDF0 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3802E91B5FD4C800DBFDF0 /* Alamofire.swift */; };
 		9D3802EC1B5FD9A100DBFDF0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3802EB1B5FD9A100DBFDF0 /* SwiftyJSON.swift */; };
 		9D3802F31B63BFB300DBFDF0 /* ShowApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3802F21B63BFB300DBFDF0 /* ShowApiModel.swift */; };
+		9D3802F51B645FF000DBFDF0 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3802F41B645FF000DBFDF0 /* JokeViewController.swift */; };
 		9DCA65241B5E9606004A42F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA65231B5E9606004A42F5 /* AppDelegate.swift */; };
 		9DCA65261B5E9606004A42F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA65251B5E9606004A42F5 /* ViewController.swift */; };
 		9DCA65291B5E9606004A42F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCA65271B5E9606004A42F5 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		9D3802EB1B5FD9A100DBFDF0 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9D3802EF1B611D6000DBFDF0 /* Objective-CBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-CBridgingHeader.h"; sourceTree = "<group>"; };
 		9D3802F21B63BFB300DBFDF0 /* ShowApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowApiModel.swift; sourceTree = "<group>"; };
+		9D3802F41B645FF000DBFDF0 /* JokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		9DCA651E1B5E9606004A42F5 /* QueryPhoneNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryPhoneNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCA65221B5E9606004A42F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DCA65231B5E9606004A42F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				9D3802F21B63BFB300DBFDF0 /* ShowApiModel.swift */,
 				9DCA65231B5E9606004A42F5 /* AppDelegate.swift */,
 				9DCA65251B5E9606004A42F5 /* ViewController.swift */,
+				9D3802F41B645FF000DBFDF0 /* JokeViewController.swift */,
 				9DCA65271B5E9606004A42F5 /* Main.storyboard */,
 				9D3802E91B5FD4C800DBFDF0 /* Alamofire.swift */,
 				9D3802EB1B5FD9A100DBFDF0 /* SwiftyJSON.swift */,
@@ -228,6 +231,7 @@
 				9DCA65241B5E9606004A42F5 /* AppDelegate.swift in Sources */,
 				9D3802F31B63BFB300DBFDF0 /* ShowApiModel.swift in Sources */,
 				9D3802EC1B5FD9A100DBFDF0 /* SwiftyJSON.swift in Sources */,
+				9D3802F51B645FF000DBFDF0 /* JokeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
