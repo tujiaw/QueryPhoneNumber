@@ -145,6 +145,35 @@ class JokeResponse : ShowApiResponse {
     }
 }
 
+class HisRequest : ShowApiRequest
+{
+    override init(serverId: String, appId: String) {
+        super.init(serverId: serverId, appId: appId)
+    }
+    
+    func url() -> String {
+        var sign = "showapi_appid\(self.appId)showapi_timestamp\(self.timestamp)\(self.secret)".md5()
+        return "\(self.systemUrl())&showapi_sign=\(sign)"
+    }
+}
+
+class HisResponse: ShowApiResponse {
+    var result: [String: AnyObject]?
+    
+    init(data: AnyObject) {
+        var json = JSON(data)
+        var resCode = json["showapi_res_code"].int ?? -1
+        var resError = json["showapi_res_error"].string ?? "response error"
+        super.init(resCode: resCode, resError: resError)
+        if self.resCode == 0 {
+            var body:JSON = json["showapi_res_body"]
+            if let items = body.dictionaryObject {
+                result = items
+            }
+        }
+    }
+}
+
 class ResponseManager {
     static var s_instance = ResponseManager()
     class var instance: ResponseManager {
@@ -152,4 +181,8 @@ class ResponseManager {
     }
     
     var joke: JokeResponse?
+    var his: HisResponse?
 }
+
+
+

@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg8-v6-eHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2331" y="-1228"/>
+            <point key="canvasLocation" x="-2290" y="-1224"/>
         </scene>
         <!--手机号归属-->
         <scene sceneID="0Ru-OZ-yg1">
@@ -182,6 +182,7 @@
                     <connections>
                         <segue destination="BEg-xq-KaA" kind="relationship" relationship="viewControllers" id="Ywf-ED-cSf"/>
                         <segue destination="Udu-ZH-8kz" kind="relationship" relationship="viewControllers" id="QH8-w4-f58"/>
+                        <segue destination="eOJ-Ff-a2s" kind="relationship" relationship="viewControllers" id="99H-qL-IH8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bms-4X-a9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,7 +206,68 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jx7-f1-NZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2680" y="-627"/>
+            <point key="canvasLocation" x="-2807" y="-618"/>
+        </scene>
+        <!--历史今天-->
+        <scene sceneID="iyk-Rk-Vvr">
+            <objects>
+                <viewController id="eOJ-Ff-a2s" customClass="HisViewController" customModule="QueryPhoneNumber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hgt-3b-1NL"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZU-vG-EPJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cqd-b7-C0t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kcQ-hs-tsD">
+                                <rect key="frame" x="0.0" y="28" width="320" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hisCell" textLabel="p45-AU-CA5" detailTextLabel="eAt-jw-o94" style="IBUITableViewCellStyleValue1" id="DmF-Nk-z5u">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DmF-Nk-z5u" id="t4d-wz-H23">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p45-AU-CA5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eAt-jw-o94">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.72941176470000002" green="0.19581030529999999" blue="0.17670737110000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eOJ-Ff-a2s" id="cCX-Yl-dtl"/>
+                                    <outlet property="delegate" destination="eOJ-Ff-a2s" id="Amc-EX-i4E"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hZU-vG-EPJ" firstAttribute="top" secondItem="kcQ-hs-tsD" secondAttribute="bottom" id="IS0-41-43x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kcQ-hs-tsD" secondAttribute="trailing" constant="-16" id="eXj-tT-inR"/>
+                            <constraint firstItem="kcQ-hs-tsD" firstAttribute="leading" secondItem="cqd-b7-C0t" secondAttribute="leadingMargin" constant="-16" id="rIY-y3-hQL"/>
+                            <constraint firstItem="kcQ-hs-tsD" firstAttribute="top" secondItem="hgt-3b-1NL" secondAttribute="bottom" constant="8" id="uNY-UL-e2k"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="历史今天" id="bIO-l0-xWU"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="kcQ-hs-tsD" id="P3O-lA-QIU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8I0-Yc-KsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2651" y="-841"/>
         </scene>
     </scenes>
 </document>
