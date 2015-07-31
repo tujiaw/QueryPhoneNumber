@@ -68,7 +68,7 @@ class ShowApiResponse {
 class PhoneNumberRequest : ShowApiRequest {
     var num = ""
     
-    init(serverId: String, appId: String, num: String) {
+    init(num: String) {
         super.init(serverId: "6-1", appId: "4150")
         self.num = num
     }
@@ -76,6 +76,25 @@ class PhoneNumberRequest : ShowApiRequest {
     func url() -> String {
         var sign = "num\(self.num)showapi_appid\(self.appId)showapi_timestamp\(self.timestamp)\(self.secret)".md5()
         return "\(self.systemUrl())&num=\(self.num)&showapi_sign=\(sign)"
+    }
+}
+
+class PhoneNumberResponse : ShowApiResponse {
+    static let resultKey = ["city", "name", "areaCode", "postCode", "prov", "provCode"]
+    var resultValue = [String: String]()
+    
+    init(data: AnyObject) {
+        var json = JSON(data)
+        var resCode = json["showapi_res_code"].int ?? -1
+        var resError = json["showapi_res_error"].string ?? "response error"
+        super.init(resCode: resCode, resError: resError)
+        
+        if resCode == 0 {
+            var body:JSON = json["showapi_res_body"]
+            for key in PhoneNumberResponse.resultKey {
+                self.resultValue[key] = body[key].string
+            }
+        }
     }
 }
 
@@ -180,6 +199,7 @@ class ResponseManager {
         return s_instance
     }
     
+    var phone: PhoneNumberResponse?
     var joke: JokeResponse?
     var his: HisResponse?
 }
